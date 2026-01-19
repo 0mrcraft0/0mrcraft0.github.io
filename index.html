@@ -576,13 +576,13 @@
         </section>
 
         <section class="quote-section quote-floating" aria-labelledby="quote-title">
-            <h2 class="section-title" id="quote-title">Мотиватор</h2>
+            <h2 class="section-title" id="quote-title">Motivator</h2>
             <blockquote class="quote-block">
-                <p id="daily-quote" aria-live="polite">Загрузка вдохновения…</p>
-                <cite class="quote-cite">Вдохновлено идеями Джен Синсеро</cite>
+                <p id="daily-quote" aria-live="polite">Loading inspiration…</p>
+                <cite class="quote-cite">Inspired by Jen Sincero's ideas</cite>
             </blockquote>
             <div class="quote-actions">
-                <button id="copy-quote" class="btn-ghost" aria-label="Скопировать цитату">Копировать</button>
+                <button id="copy-quote" class="btn-ghost" aria-label="Copy quote">Copy</button>
                 <span id="quote-toast" class="toast" role="status" aria-live="polite"></span>
             </div>
         </section>
@@ -770,16 +770,16 @@
         console.log('%c© 2026 NEON GHOST - All Rights Reserved', 'color: #666; font-size: 12px;');
 
         const quotes = [
-            'Ты не обязан быть идеальным, чтобы начать.',
-            'Действие создаёт уверенность, бездействие выращивает страх.',
-            'Выбирай себя — мир подстроится.',
-            'Фокус на возможности сильнее фокуса на страхах.',
-            'Энергия идёт туда, куда направляешь внимание.',
-            'Комфортная зона — красивая клетка. Выход открытый.',
-            'Решение — первый шаг, остальное догонит.',
-            'Сомнения дорогие — меняй их на маленькие действия.',
-            'Деньги любят ясность и движение.',
-            'Каждый день — новый шанс стать смелее.'
+            'You don\'t have to be perfect to start.',
+            'Action builds confidence, inaction feeds fear.',
+            'Choose yourself — the world will adjust.',
+            'Focus on possibilities is stronger than focus on fears.',
+            'Energy goes where attention flows.',
+            'Comfort zone is a beautiful cage. The exit is open.',
+            'The decision is the first step, everything else will follow.',
+            'Trade costly doubts for small actions.',
+            'Money loves clarity and movement.',
+            'Every day is a new chance to be braver.'
         ];
 
         const quoteEl = document.getElementById('daily-quote');
@@ -800,8 +800,8 @@
         }
 
         copyBtn.addEventListener('click', async () => {
-            try { await navigator.clipboard.writeText(quoteEl.textContent); showToast('Скопировано'); }
-            catch { showToast('Не удалось скопировать'); }
+            try { await navigator.clipboard.writeText(quoteEl.textContent); showToast('Copied'); }
+            catch { showToast('Failed to copy'); }
         });
 
         initQuote();
