@@ -40,6 +40,28 @@
                     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
                 }
 
+                .quote-floating {
+                    position: fixed;
+                    top: 24px;
+                    right: 24px;
+                    width: min(340px, 80vw);
+                    z-index: 30;
+                    animation: drift 18s ease-in-out infinite alternate;
+                }
+
+                .quote-floating::before {
+                    content: '';
+                    position: absolute;
+                    inset: -20px -16px -16px -20px;
+                    background:
+                        radial-gradient(120px 80px at 80% 20%, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0) 70%),
+                        radial-gradient(180px 140px at 10% 60%, rgba(200,200,200,0.05) 0%, rgba(200,200,200,0) 75%);
+                    filter: blur(12px);
+                    mix-blend-mode: screen;
+                    opacity: 0.7;
+                    pointer-events: none;
+                }
+
                 .quote-block {
                     background: #141414;
                     border-left: 3px solid #444;
@@ -47,6 +69,7 @@
                     border-radius: 6px;
                     color: #d0d0d0;
                     font-style: italic;
+                    animation: smokeIn 700ms ease-out both;
                 }
 
                 .quote-cite {
@@ -95,6 +118,30 @@
                 .toast.visible {
                     opacity: 1;
                     transform: translateY(0);
+                }
+
+                @keyframes smokeIn {
+                    from {
+                        opacity: 0;
+                        transform: translateY(-8px) scale(0.98);
+                        filter: blur(12px);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateY(0) scale(1);
+                        filter: blur(0);
+                    }
+                }
+
+                @keyframes drift {
+                    0% { transform: translate(0, 0); }
+                    50% { transform: translate(-1px, 2px); }
+                    100% { transform: translate(2px, -1px); }
+                }
+
+                @media (prefers-reduced-motion: reduce) {
+                    .quote-floating { animation: none; }
+                    .quote-block { animation: none; }
                 }
         /* Use system fonts to avoid render-blocking external font requests */
 
@@ -513,14 +560,13 @@
             <div class="terminal-text">> STATUS: ONLINE | READY FOR COLLABORATION</div>
         </section>
 
-        <section class="quote-section" aria-labelledby="quote-title">
+        <section class="quote-section quote-floating" aria-labelledby="quote-title">
             <h2 class="section-title" id="quote-title">Мотиватор</h2>
             <blockquote class="quote-block">
                 <p id="daily-quote" aria-live="polite">Загрузка вдохновения…</p>
                 <cite class="quote-cite">Вдохновлено идеями Джен Синсеро</cite>
             </blockquote>
             <div class="quote-actions">
-                <button id="shuffle-quote" class="btn-ghost" aria-label="Показать другую мысль">Ещё мысль</button>
                 <button id="copy-quote" class="btn-ghost" aria-label="Скопировать цитату">Копировать</button>
                 <span id="quote-toast" class="toast" role="status" aria-live="polite"></span>
             </div>
@@ -770,37 +816,19 @@
 
         const quoteEl = document.getElementById('daily-quote');
         const toastEl = document.getElementById('quote-toast');
-        const shuffleBtn = document.getElementById('shuffle-quote');
         const copyBtn = document.getElementById('copy-quote');
 
-        function halfDaySlot(ts = Date.now()) {
-            const HALF_DAY_MS = 12 * 60 * 60 * 1000;
-            return Math.floor(ts / HALF_DAY_MS);
-        }
-
-        function setQuoteBySlot(slot) {
-            const idx = slot % quotes.length;
-            quoteEl.textContent = quotes[idx];
-            localStorage.setItem('quote:lastSlot', String(slot));
-        }
-
+        // Update quote on site load; rotate to avoid repetition
         function initQuote() {
-            const slot = halfDaySlot();
-            const lastSlot = Number(localStorage.getItem('quote:lastSlot'));
-            if (!Number.isFinite(lastSlot) || lastSlot !== slot) {
-                setQuoteBySlot(slot);
+            const lastIdx = Number(localStorage.getItem('quote:lastIdx'));
+            let idx;
+            if (Number.isFinite(lastIdx)) {
+                idx = (lastIdx + 1) % quotes.length; // простая ротация
             } else {
-                setQuoteBySlot(lastSlot);
+                idx = Math.floor(Math.random() * quotes.length);
             }
-        }
-
-        function checkQuoteUpdate() {
-            const slot = halfDaySlot();
-            const saved = Number(localStorage.getItem('quote:lastSlot'));
-            if (!Number.isFinite(saved) || saved !== slot) {
-                setQuoteBySlot(slot);
-                showToast('Цитата обновлена');
-            }
+            quoteEl.textContent = quotes[idx];
+            localStorage.setItem('quote:lastIdx', String(idx));
         }
 
         function showToast(text) {
@@ -812,12 +840,6 @@
             }, 2000);
         }
 
-        shuffleBtn.addEventListener('click', () => {
-            const randomIdx = Math.floor(Math.random() * quotes.length);
-            quoteEl.textContent = quotes[randomIdx];
-            showToast('Ещё мысль');
-        });
-
         copyBtn.addEventListener('click', async () => {
             try {
                 await navigator.clipboard.writeText(quoteEl.textContent);
@@ -828,8 +850,7 @@
         });
 
         initQuote();
-        // Re-check every minute; updates when сменится 12-часовой слот
-        setInterval(checkQuoteUpdate, 60 * 1000);
+        // Обновление происходит при входе на сайт, без периодического таймера
     </script>
 </body>
 </html>
