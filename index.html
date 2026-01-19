@@ -32,6 +32,17 @@
     <style>
         /* Use system fonts to avoid render-blocking external font requests */
 
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -41,7 +52,7 @@
         body {
             font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
             background: #0f0f0f;
-            color: #e0e0e0;
+            color: #e6e6e6;
             overflow-x: hidden;
             line-height: 1.6;
             user-select: none;
@@ -89,7 +100,7 @@
 
         .subtitle {
             font-size: 1.1rem;
-            color: #888;
+            color: #c8c8c8;
             letter-spacing: 5px;
             margin-top: 15px;
             font-weight: 300;
@@ -155,7 +166,7 @@
 
         .terminal-text {
             font-family: 'Courier New', monospace;
-            color: #888;
+            color: #c4c4c4;
             font-size: 0.95rem;
             margin-top: 20px;
             padding: 15px;
@@ -185,7 +196,7 @@
         }
 
         .skill-percent {
-            color: #888;
+            color: #c2c2c2;
             font-weight: 400;
         }
 
@@ -268,7 +279,7 @@
 
         .terminal-title {
             margin-left: auto;
-            color: #666;
+            color: #d0d0d0;
             font-family: 'Courier New', monospace;
             font-size: 0.85rem;
         }
@@ -279,7 +290,7 @@
             max-height: 400px;
             overflow-y: auto;
             font-family: 'Courier New', monospace;
-            color: #888;
+            color: #c4c4c4;
             font-size: 0.95rem;
             line-height: 1.6;
         }
@@ -302,15 +313,15 @@
         }
 
         .terminal-command {
-            color: #aaa;
+            color: #e0e0e0;
         }
 
         .terminal-error {
-            color: #d66;
+            color: #ff7878;
         }
 
         .terminal-success {
-            color: #999;
+            color: #d6d6d6;
         }
 
         .terminal-input-line {
@@ -323,7 +334,7 @@
         }
 
         .terminal-prompt {
-            color: #666;
+            color: #d8d8d8;
             font-family: 'Courier New', monospace;
             font-weight: bold;
         }
@@ -332,7 +343,7 @@
             flex: 1;
             background: transparent;
             border: none;
-            color: #888;
+            color: #e6e6e6;
             font-family: 'Courier New', monospace;
             font-size: 0.95rem;
             outline: none;
@@ -343,8 +354,8 @@
             text-align: center;
             margin-top: 80px;
             padding: 40px 0;
-            color: #555;
-            font-size: 0.85rem;
+            color: #b3b3b3;
+            font-size: 0.9rem;
             border-top: 1px solid #2a2a2a;
         }
 
@@ -392,6 +403,7 @@
             <div class="profile-img">💀</div>
         </header>
 
+        <main id="main-content" role="main">
         <section class="about-section">
             <h2 class="section-title">About Me</h2>
             <p class="about-text">
@@ -504,10 +516,13 @@
                 </div>
                 <div class="terminal-input-line">
                     <span class="terminal-prompt">guest@system:~$</span>
+                    <label for="terminal-input" class="visually-hidden">Terminal command input</label>
                     <input type="text" id="terminal-input" class="terminal-input" autofocus>
                 </div>
             </div>
         </section>
+
+        </main>
 
         <footer>
             <p>© 2026 NEON GHOST | ALL RIGHTS RESERVED</p>
