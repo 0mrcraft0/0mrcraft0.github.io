@@ -30,6 +30,72 @@
     <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💀</text></svg>">
     
     <style>
+                /* Quote Section */
+                .quote-section {
+                    background: #181818;
+                    border: 1px solid #2a2a2a;
+                    border-radius: 12px;
+                    padding: 40px;
+                    margin-bottom: 40px;
+                    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+                }
+
+                .quote-block {
+                    background: #141414;
+                    border-left: 3px solid #444;
+                    padding: 20px 24px;
+                    border-radius: 6px;
+                    color: #d0d0d0;
+                    font-style: italic;
+                }
+
+                .quote-cite {
+                    display: block;
+                    margin-top: 10px;
+                    color: #b3b3b3;
+                    font-style: normal;
+                    font-size: 0.9rem;
+                }
+
+                .quote-actions {
+                    margin-top: 16px;
+                    display: flex;
+                    gap: 10px;
+                    align-items: center;
+                }
+
+                .btn-ghost {
+                    background: transparent;
+                    border: 1px solid #3a3a3a;
+                    color: #e0e0e0;
+                    padding: 8px 14px;
+                    border-radius: 6px;
+                    font-size: 0.95rem;
+                    cursor: pointer;
+                    transition: all 0.2s ease;
+                }
+
+                .btn-ghost:hover {
+                    background: #202020;
+                    border-color: #4a4a4a;
+                }
+
+                .toast {
+                    min-width: 120px;
+                    padding: 6px 10px;
+                    border-radius: 6px;
+                    background: #101010;
+                    border: 1px solid #333;
+                    color: #cfcfcf;
+                    opacity: 0;
+                    transform: translateY(6px);
+                    transition: opacity 0.2s ease, transform 0.2s ease;
+                }
+
+                .toast.visible {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
         /* Use system fonts to avoid render-blocking external font requests */
 
         .visually-hidden {
@@ -447,6 +513,19 @@
             <div class="terminal-text">> STATUS: ONLINE | READY FOR COLLABORATION</div>
         </section>
 
+        <section class="quote-section" aria-labelledby="quote-title">
+            <h2 class="section-title" id="quote-title">Мотиватор</h2>
+            <blockquote class="quote-block">
+                <p id="daily-quote" aria-live="polite">Загрузка вдохновения…</p>
+                <cite class="quote-cite">Вдохновлено идеями Джен Синсеро</cite>
+            </blockquote>
+            <div class="quote-actions">
+                <button id="shuffle-quote" class="btn-ghost" aria-label="Показать другую мысль">Ещё мысль</button>
+                <button id="copy-quote" class="btn-ghost" aria-label="Скопировать цитату">Копировать</button>
+                <span id="quote-toast" class="toast" role="status" aria-live="polite"></span>
+            </div>
+        </section>
+
         <section class="skills-section">
             <h2 class="section-title">Skills</h2>
             <div class="skills-grid">
@@ -674,6 +753,83 @@
         console.log('%cUsing the console can be dangerous!', 'color: #ff9500; font-size: 20px;');
         console.log('%cDo not paste code you do not understand here.', 'color: #888; font-size: 14px;');
         console.log('%c© 2026 NEON GHOST - All Rights Reserved', 'color: #666; font-size: 12px;');
+
+        // Quotes inspired by Jen Sincero (paraphrased; non-verbatim)
+        const quotes = [
+            'Ты не обязан быть идеальным, чтобы начать.',
+            'Действие создаёт уверенность, бездействие выращивает страх.',
+            'Выбирай себя — мир подстроится.',
+            'Фокус на возможности сильнее фокуса на страхах.',
+            'Энергия идёт туда, куда направляешь внимание.',
+            'Комфортная зона — красивая клетка. Выход открытый.',
+            'Решение — первый шаг, остальное догонит.',
+            'Сомнения дорогие — меняй их на маленькие действия.',
+            'Деньги любят ясность и движение.',
+            'Каждый день — новый шанс стать смелее.'
+        ];
+
+        const quoteEl = document.getElementById('daily-quote');
+        const toastEl = document.getElementById('quote-toast');
+        const shuffleBtn = document.getElementById('shuffle-quote');
+        const copyBtn = document.getElementById('copy-quote');
+
+        function halfDaySlot(ts = Date.now()) {
+            const HALF_DAY_MS = 12 * 60 * 60 * 1000;
+            return Math.floor(ts / HALF_DAY_MS);
+        }
+
+        function setQuoteBySlot(slot) {
+            const idx = slot % quotes.length;
+            quoteEl.textContent = quotes[idx];
+            localStorage.setItem('quote:lastSlot', String(slot));
+        }
+
+        function initQuote() {
+            const slot = halfDaySlot();
+            const lastSlot = Number(localStorage.getItem('quote:lastSlot'));
+            if (!Number.isFinite(lastSlot) || lastSlot !== slot) {
+                setQuoteBySlot(slot);
+            } else {
+                setQuoteBySlot(lastSlot);
+            }
+        }
+
+        function checkQuoteUpdate() {
+            const slot = halfDaySlot();
+            const saved = Number(localStorage.getItem('quote:lastSlot'));
+            if (!Number.isFinite(saved) || saved !== slot) {
+                setQuoteBySlot(slot);
+                showToast('Цитата обновлена');
+            }
+        }
+
+        function showToast(text) {
+            toastEl.textContent = text;
+            toastEl.classList.add('visible');
+            setTimeout(() => {
+                toastEl.classList.remove('visible');
+                toastEl.textContent = '';
+            }, 2000);
+        }
+
+        shuffleBtn.addEventListener('click', () => {
+            const randomIdx = Math.floor(Math.random() * quotes.length);
+            quoteEl.textContent = quotes[randomIdx];
+            showToast('Ещё мысль');
+        });
+
+        copyBtn.addEventListener('click', async () => {
+            try {
+                await navigator.clipboard.writeText(quoteEl.textContent);
+                showToast('Скопировано');
+            } catch {
+                showToast('Не удалось скопировать');
+            }
+        });
+
+        initQuote();
+        // Re-check every minute; updates when сменится 12-часовой слот
+        setInterval(checkQuoteUpdate, 60 * 1000);
     </script>
 </body>
 </html>
