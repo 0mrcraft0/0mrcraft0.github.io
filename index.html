@@ -26,12 +26,11 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://0mrcraft0.github.io">
     
-    <!-- Font preconnect & preload to reduce render-blocking -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap"></noscript>
+       <!-- Favicon -->
+       <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💀</text></svg>">
+    
+    <style>
+        /* Use system fonts to avoid render-blocking external font requests */
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💀</text></svg>">
@@ -45,7 +44,7 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
             background: #0f0f0f;
             color: #e0e0e0;
             overflow-x: hidden;
@@ -84,7 +83,7 @@
         }
 
         .main-title {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Georgia', 'Times New Roman', serif;
             font-size: 4rem;
             font-weight: 700;
             color: #ffffff;
@@ -141,7 +140,7 @@
         }
 
         .section-title {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Georgia', 'Times New Roman', serif;
             font-size: 2rem;
             font-weight: 600;
             color: #ffffff;
