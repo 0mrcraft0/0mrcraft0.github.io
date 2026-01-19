@@ -575,18 +575,6 @@
             <div class="terminal-text">> STATUS: ONLINE | READY FOR COLLABORATION</div>
         </section>
 
-        <section class="quote-section quote-floating" aria-labelledby="quote-title">
-            <h2 class="section-title" id="quote-title">Motivator</h2>
-            <blockquote class="quote-block">
-                <p id="daily-quote" aria-live="polite">Loading inspiration…</p>
-                <cite class="quote-cite">Inspired by Jen Sincero's ideas</cite>
-            </blockquote>
-            <div class="quote-actions">
-                <button id="copy-quote" class="btn-ghost" aria-label="Copy quote">Copy</button>
-                <span id="quote-toast" class="toast" role="status" aria-live="polite"></span>
-            </div>
-        </section>
-
         <section class="skills-section">
             <h2 class="section-title">Skills</h2>
             <div class="skills-grid">
@@ -768,19 +756,6 @@
         console.log('%cUsing the console can be dangerous!', 'color: #ff9500; font-size: 20px;');
         console.log('%cDo not paste code you do not understand here.', 'color: #888; font-size: 14px;');
         console.log('%c© 2026 NEON GHOST - All Rights Reserved', 'color: #666; font-size: 12px;');
-
-        const quotes = [
-            'You don\'t have to be perfect to start.',
-            'Action builds confidence, inaction feeds fear.',
-            'Choose yourself — the world will adjust.',
-            'Focus on possibilities is stronger than focus on fears.',
-            'Energy goes where attention flows.',
-            'Comfort zone is a beautiful cage. The exit is open.',
-            'The decision is the first step, everything else will follow.',
-            'Trade costly doubts for small actions.',
-            'Money loves clarity and movement.',
-            'Every day is a new chance to be braver.'
-        ];
 
         const quoteEl = document.getElementById('daily-quote');
         const toastEl = document.getElementById('quote-toast');
