@@ -955,6 +955,81 @@
                 width: calc(100% - 36px);
             }
         }
+
+        /* CLEAN QUOTE CARD */
+        .hero-art::before,
+        .hero-art::after {
+            display: none;
+        }
+
+        .hero-art .profile-avatar {
+            align-content: center;
+            background: linear-gradient(145deg, rgba(91, 92, 240, .28), rgba(20, 22, 48, .82));
+            border: 1px solid rgba(255, 255, 255, .2);
+            border-radius: 24px;
+            box-shadow: 0 28px 90px rgba(0, 0, 0, .34), inset 0 1px rgba(255, 255, 255, .14);
+            clip-path: none;
+            height: 300px;
+            justify-items: start;
+            padding: 42px;
+            width: min(100%, 360px);
+        }
+
+        .hero-art .profile-avatar::after {
+            background: linear-gradient(90deg, var(--color-secondary), transparent);
+            bottom: auto;
+            height: 2px;
+            inset: 0 auto auto 42px;
+            opacity: 1;
+            transform: none;
+            width: 84px;
+        }
+
+        .hero-quote {
+            font-size: clamp(1.35rem, 2.5vw, 2rem);
+            line-height: 1.12;
+            max-width: 270px;
+        }
+
+        .hero-quote::before {
+            color: var(--color-accent);
+            font-size: 4.5rem;
+            margin-bottom: 8px;
+        }
+
+        .quote-meta {
+            color: rgba(248, 249, 255, .58);
+            margin-top: 28px;
+        }
+
+        @media (max-width: 800px) {
+            .hero-art .profile-avatar {
+                height: 260px;
+                padding: 34px;
+                width: min(100%, 340px);
+            }
+
+            .hero-art .profile-avatar::after {
+                left: 34px;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .hero-art .profile-avatar {
+                height: 238px;
+                padding: 30px;
+                width: min(100%, 320px);
+            }
+
+            .hero-art .profile-avatar::after {
+                left: 30px;
+            }
+
+            .hero-quote {
+                font-size: 1.35rem;
+                max-width: 220px;
+            }
+        }
     </style>
 </head>
 <body>
