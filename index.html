@@ -558,6 +558,157 @@
             font-size: 0.95rem;
         }
 
+        /* NEON GHOST 2.0 */
+        :root {
+            --color-primary: #d7ff62;
+            --color-secondary: #ff6b9d;
+            --color-accent: #65e8ff;
+            --color-dark: #11151f;
+            --color-darker: #070910;
+            --color-text: #f8f8f2;
+            --color-text-muted: #a4adbd;
+            --line: rgba(248, 248, 242, .14);
+            --soft-line: rgba(248, 248, 242, .08);
+        }
+
+        body {
+            background: var(--color-darker);
+            font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
+            line-height: 1.6;
+        }
+
+        body::before {
+            background:
+                linear-gradient(115deg, rgba(215, 255, 98, .08), transparent 36%),
+                radial-gradient(circle at 84% 9%, rgba(101, 232, 255, .13), transparent 28%),
+                radial-gradient(circle at 8% 48%, rgba(255, 107, 157, .1), transparent 25%);
+            animation: none;
+        }
+
+        body::after {
+            background-image: linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+            background-size: 56px 56px;
+            content: '';
+            inset: 0;
+            opacity: .32;
+            pointer-events: none;
+            position: fixed;
+            z-index: -1;
+        }
+
+        .site-nav {
+            align-items: center;
+            backdrop-filter: blur(18px);
+            background: rgba(7, 9, 16, .72);
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            display: flex;
+            gap: 22px;
+            justify-content: space-between;
+            left: 50%;
+            max-width: 1100px;
+            padding: 12px 14px 12px 20px;
+            position: fixed;
+            top: 18px;
+            transform: translateX(-50%);
+            width: calc(100% - 40px);
+            z-index: 10;
+        }
+
+        .nav-logo, .site-nav a { color: var(--color-text); text-decoration: none; }
+        .nav-logo { font-size: .82rem; font-weight: 800; letter-spacing: .18em; }
+        .nav-links { display: flex; gap: 24px; }
+        .nav-links a { color: var(--color-text-muted); font-size: .78rem; transition: color .2s ease; }
+        .nav-links a:hover { color: var(--color-primary); }
+        .nav-status { color: var(--color-primary); font: .62rem monospace; letter-spacing: .08em; text-transform: uppercase; }
+
+        .hero {
+            align-items: stretch;
+            min-height: 100vh;
+            padding: 150px 20px 100px;
+            position: relative;
+            text-align: left;
+        }
+
+        .hero .container { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(300px, .85fr); gap: 70px; align-items: center; }
+        .hero-content { max-width: 760px; }
+        .hero-badge { background: rgba(215, 255, 98, .08); border: 1px solid rgba(215, 255, 98, .42); color: var(--color-primary); font: .68rem monospace; letter-spacing: .14em; padding: 9px 14px; }
+        .hero-title { font-size: clamp(4rem, 10vw, 9.2rem); letter-spacing: -.1em; line-height: .83; margin: 26px 0; }
+        .hero-title span { color: var(--color-primary); }
+        .hero-subtitle { color: var(--color-text-muted); font-size: clamp(1rem, 2vw, 1.35rem); max-width: 520px; }
+        .profile-avatar { align-self: end; border: 1px solid var(--color-primary); box-shadow: 0 0 0 18px rgba(215, 255, 98, .04), 0 0 80px rgba(215, 255, 98, .2); font-size: 3.5rem; height: 210px; margin: 0 0 32px auto; position: relative; width: 210px; }
+        .profile-avatar::after { border: 1px solid var(--color-accent); border-radius: 50%; content: ''; inset: -34px 25px 25px -34px; position: absolute; }
+        .hero-content::after { color: rgba(248, 248, 242, .42); content: 'AVAILABLE FOR SELECTED PROJECTS / 2026'; display: block; font: .62rem monospace; letter-spacing: .14em; margin-top: 58px; }
+        .cta-button { background: var(--color-primary); border-radius: 4px; box-shadow: 8px 8px 0 rgba(255, 107, 157, .35); color: var(--color-darker); font-size: .9rem; padding: 14px 24px; }
+        .cta-button:hover { box-shadow: 3px 3px 0 rgba(255, 107, 157, .5); filter: none; transform: translate(4px, 4px); }
+
+        section { border-top: 1px solid var(--soft-line); padding: 130px 0; }
+        section:nth-child(even) { background: rgba(255, 255, 255, .018); }
+        .section-header { margin-bottom: 58px; text-align: left; }
+        .section-title { font-size: clamp(2.5rem, 6vw, 5rem); letter-spacing: -.07em; line-height: .95; }
+        .section-title span { color: var(--color-primary); }
+        .section-description { color: var(--color-text-muted); font-size: 1rem; margin: 0; max-width: 520px; }
+        .about-content { gap: 80px; }
+        .about-text { color: var(--color-text-muted); font-size: 1rem; line-height: 1.85; }
+        .about-highlight { background: rgba(215, 255, 98, .055); border-left-color: var(--color-primary); border-radius: 0; font-size: 1.1rem; line-height: 1.5; }
+        .stats-grid { gap: 12px; }
+        .stat-item { background: rgba(255,255,255,.025); border: 1px solid var(--line); border-radius: 4px; padding: 30px 18px; }
+        .stat-number { color: var(--color-primary); font-size: 2.5rem; }
+        .stat-label { color: var(--color-text-muted); font-size: .68rem; }
+        .skills-container, .projects-container, .contact-grid { gap: 14px; margin-top: 0; }
+        .skill-card, .project-card, .contact-card { background: rgba(255,255,255,.025); border: 1px solid var(--line); border-radius: 4px; }
+        .skill-card { padding: 28px 24px; }
+        .skill-card:hover, .project-card:hover, .contact-card:hover { background: rgba(215,255,98,.06); border-color: var(--color-primary); box-shadow: 0 20px 60px rgba(0,0,0,.3); }
+        .skill-icon { color: var(--color-primary); font-size: 2.2rem; }
+        .skill-name { font-size: 1.1rem; }
+        .skill-bar { background: rgba(255,255,255,.1); height: 4px; }
+        .skill-progress { background: var(--color-primary); }
+
+        #projects { background: linear-gradient(180deg, rgba(215,255,98,.035), transparent 35%); }
+        #projects .section-header { align-items: end; display: flex; justify-content: space-between; gap: 30px; }
+        .projects-container { grid-template-columns: repeat(6, 1fr); }
+        .project-card { min-height: 380px; overflow: hidden; padding: 22px; position: relative; }
+        .project-card::before { background: linear-gradient(135deg, var(--project-color, var(--color-primary)), transparent 62%); content: ''; height: 150px; left: 0; opacity: .18; position: absolute; right: 0; top: 0; }
+        .project-card:nth-child(1) { --project-color: #d7ff62; grid-column: span 3; }
+        .project-card:nth-child(2) { --project-color: #65e8ff; grid-column: span 3; }
+        .project-card:nth-child(3), .project-card:nth-child(4), .project-card:nth-child(5) { grid-column: span 2; min-height: 330px; }
+        .project-card:nth-child(3) { --project-color: #ffb36b; }
+        .project-card:nth-child(4) { --project-color: #a889ff; }
+        .project-card:nth-child(5) { --project-color: #ff6b9d; }
+        .project-number { color: var(--project-color, var(--color-primary)); font-size: .66rem; position: relative; }
+        .project-icon { color: var(--project-color, var(--color-primary)); font-size: 3rem; margin: 52px 0 20px; position: relative; }
+        .project-name { font-size: 1.5rem; letter-spacing: .02em; position: relative; }
+        .project-description { color: var(--color-text-muted); font-size: .88rem; line-height: 1.65; position: relative; }
+        .project-link { color: var(--project-color, var(--color-primary)); font: .7rem monospace; letter-spacing: .08em; text-transform: uppercase; }
+        .contact-card { padding: 28px 20px; }
+        .contact-icon { color: var(--color-primary); }
+        footer { background: rgba(0,0,0,.2); padding: 38px 0; }
+
+        @media (max-width: 800px) {
+            .site-nav { padding: 11px 14px; }
+            .nav-links { gap: 12px; }
+            .nav-status { display: none; }
+            .hero .container { display: block; }
+            .hero { padding-top: 140px; }
+            .hero-title { font-size: clamp(4rem, 19vw, 7rem); }
+            .profile-avatar { height: 150px; margin: 72px 30px 35px auto; width: 150px; }
+            #projects .section-header { display: block; }
+            #projects .section-description { margin-top: 20px; }
+            .projects-container { grid-template-columns: 1fr 1fr; }
+            .project-card:nth-child(n) { grid-column: span 1; min-height: 330px; }
+        }
+
+        @media (max-width: 520px) {
+            .site-nav { border-radius: 8px; width: calc(100% - 24px); }
+            .nav-links { display: none; }
+            .container { padding: 0 18px; }
+            .hero { padding-left: 18px; padding-right: 18px; }
+            .hero-title { font-size: 20vw; }
+            .projects-container, .contact-grid { grid-template-columns: 1fr; }
+            .project-card:nth-child(n) { grid-column: auto; }
+            .stats-grid { grid-template-columns: 1fr; }
+        }
+
         /* RESPONSIVE */
         @media (max-width: 768px) {
             .about-content {
@@ -604,8 +755,19 @@
     </style>
 </head>
 <body>
+    <nav class="site-nav" aria-label="Primary navigation">
+        <a class="nav-logo" href="#top">NG / 026</a>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <span class="nav-status">● Open to work</span>
+    </nav>
+
     <!-- HERO SECTION -->
-    <section class="hero">
+    <section class="hero" id="top">
         <div class="container">
             <div class="hero-content">
                 <span class="hero-badge">💀 DIGITAL ARCHITECT</span>
@@ -739,35 +901,35 @@
                 <p class="section-description">Interactive frontend experiences built for different products, audiences, and moods</p>
             </div>
             <div class="projects-container">
-                <a class="project-card" href="../1%D0%B9%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82/index.html">
+                <a class="project-card" href="https://0mrcraft0.github.io/NEXUS-AI-SaaS-Platform-/" target="_blank" rel="noopener noreferrer">
                     <span class="project-number">01 / AI PRODUCT</span>
                     <span class="project-icon">✦</span>
                     <span class="project-name">NEXUS</span>
                     <span class="project-description">AI workspace with a landing page, dashboard, chat, billing, usage metrics, and command palette.</span>
                     <span class="project-link">Open project <span>↗</span></span>
                 </a>
-                <a class="project-card" href="../2%D0%B9%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82/index.html">
+                <a class="project-card" href="https://0mrcraft0.github.io/VELOCITY-Auto-Marketplace/" target="_blank" rel="noopener noreferrer">
                     <span class="project-number">02 / MARKETPLACE</span>
                     <span class="project-icon">V</span>
                     <span class="project-name">VELOCITY</span>
                     <span class="project-description">Curated automotive marketplace with inventory search, filters, favorites, and responsive navigation.</span>
                     <span class="project-link">Open project <span>↗</span></span>
                 </a>
-                <a class="project-card" href="../3%D0%B9%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82/index.html">
+                <a class="project-card" href="https://0mrcraft0.github.io/TRAVELVERSE-Travel-Platform/" target="_blank" rel="noopener noreferrer">
                     <span class="project-number">03 / TRAVEL</span>
                     <span class="project-icon">✳</span>
                     <span class="project-name">TRAVELVERSE</span>
                     <span class="project-description">Travel discovery experience with destinations, trip ideas, saved places, and a personal planner.</span>
                     <span class="project-link">Open project <span>↗</span></span>
                 </a>
-                <a class="project-card" href="../4%D0%B9%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82/index.html">
+                <a class="project-card" href="https://0mrcraft0.github.io/CYBERBANK-FinTech-Dashboard/" target="_blank" rel="noopener noreferrer">
                     <span class="project-number">04 / FINTECH</span>
                     <span class="project-icon">C</span>
                     <span class="project-name">CYBERBANK</span>
                     <span class="project-description">Fintech dashboard with portfolio analytics, markets, transactions, paper trading, and security controls.</span>
                     <span class="project-link">Open project <span>↗</span></span>
                 </a>
-                <a class="project-card" href="../5%D0%B9%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82/index.html">
+                <a class="project-card" href="https://0mrcraft0.github.io/FOODORA-Food-Delivery/" target="_blank" rel="noopener noreferrer">
                     <span class="project-number">05 / FOOD DELIVERY</span>
                     <span class="project-icon">F</span>
                     <span class="project-name">FOODORA</span>
