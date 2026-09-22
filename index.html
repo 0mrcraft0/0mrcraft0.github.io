@@ -752,6 +752,65 @@
                 font-size: 2.5rem;
             }
         }
+
+        /* FINAL LAYOUT OVERRIDES */
+        .hero .container {
+            align-items: center;
+            grid-template-columns: minmax(0, 1.05fr) minmax(280px, .95fr);
+        }
+
+        .hero-content {
+            min-width: 0;
+        }
+
+        .hero-art {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 360px;
+            position: relative;
+        }
+
+        .hero-art::before {
+            border: 1px solid rgba(255, 255, 255, .1);
+            border-radius: 50%;
+            content: '';
+            height: 330px;
+            position: absolute;
+            transform: rotate(-18deg);
+            width: 330px;
+        }
+
+        .hero-art .profile-avatar {
+            margin: 0;
+            z-index: 1;
+        }
+
+        .hero-art-label {
+            color: rgba(248, 248, 242, .48);
+            font: .62rem monospace;
+            letter-spacing: .16em;
+            margin-top: 34px;
+        }
+
+        @media (max-width: 800px) {
+            .hero .container { grid-template-columns: 1fr; }
+            .hero-art { min-height: 270px; order: -1; }
+            .hero-art::before { height: 240px; width: 240px; }
+            .hero-art .profile-avatar { height: 150px; width: 150px; }
+            .hero-content::after { margin-top: 38px; }
+        }
+
+        @media (max-width: 520px) {
+            .hero { min-height: auto; padding: 128px 18px 78px; }
+            .hero-title { font-size: clamp(3.8rem, 19vw, 6.5rem); letter-spacing: -.09em; max-width: 100%; overflow-wrap: anywhere; }
+            .hero-subtitle { font-size: 1rem; }
+            .hero-art { min-height: 225px; }
+            .hero-art::before { height: 205px; width: 205px; }
+            .hero-art .profile-avatar { height: 132px; width: 132px; }
+            .hero-art-label { font-size: .54rem; margin-top: 22px; }
+        }
     </style>
 </head>
 <body>
@@ -771,10 +830,13 @@
         <div class="container">
             <div class="hero-content">
                 <span class="hero-badge">💀 DIGITAL ARCHITECT</span>
-                <div class="profile-avatar">💀</div>
                 <h1 class="hero-title">NEON<br><span>GHOST</span></h1>
                 <p class="hero-subtitle">Full-stack developer & UI/UX designer crafting digital experiences</p>
                 <a href="#projects" class="cta-button">View Projects</a>
+            </div>
+            <div class="hero-art" aria-hidden="true">
+                <div class="profile-avatar">💀</div>
+                <span class="hero-art-label">DIGITAL / HUMAN / WEB</span>
             </div>
         </div>
     </section>
