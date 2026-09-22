@@ -637,8 +637,8 @@
         .hero-title span { color: var(--color-primary); }
         .hero-subtitle { color: var(--color-text-muted); font-size: clamp(1rem, 2vw, 1.35rem); max-width: 520px; }
         .profile-avatar { align-self: end; border: 1px solid var(--color-primary); box-shadow: 0 0 0 18px rgba(91, 92, 240, .05), 0 0 80px rgba(91, 92, 240, .28); display: grid; height: 210px; margin: 0 0 32px auto; place-items: center; position: relative; width: 210px; }
-        .profile-avatar { background: linear-gradient(145deg, rgba(91, 92, 240, .28), rgba(255, 200, 87, .14)); border-radius: 22px; }
-        .profile-avatar::after { border: 1px solid var(--color-accent); border-radius: 14px; content: ''; inset: -26px 24px 24px -26px; position: absolute; transform: rotate(-12deg); }
+        .profile-avatar { background: linear-gradient(145deg, rgba(91, 92, 240, .28), rgba(255, 200, 87, .14)); border-radius: 0; clip-path: polygon(8% 0, 100% 0, 92% 100%, 0 100%); }
+        .profile-avatar::after { background: repeating-linear-gradient(135deg, transparent 0 18px, rgba(255, 200, 87, .14) 19px 20px); content: ''; inset: -20px; opacity: .8; position: absolute; transform: rotate(-8deg); z-index: 0; }
         .avatar-mark { color: var(--color-text); font: 700 clamp(2.7rem, 5vw, 4.6rem) 'Trebuchet MS', sans-serif; letter-spacing: -.18em; line-height: 1; margin-left: -.14em; position: relative; text-shadow: 5px 5px 0 var(--color-secondary); z-index: 1; }
         .avatar-mark::before { border: 1px solid var(--color-accent); content: ''; height: 76%; left: 50%; position: absolute; top: 12%; transform: translateX(-50%) rotate(45deg); width: 76%; z-index: -1; }
         .hero-quote { color: var(--color-text); font-size: clamp(1.15rem, 2.4vw, 1.8rem); font-weight: 700; letter-spacing: -.04em; line-height: 1.08; margin: 0; max-width: 210px; position: relative; text-wrap: balance; z-index: 1; }
@@ -695,7 +695,8 @@
             .nav-links { gap: 12px; }
             .nav-status { display: none; }
             .hero .container { display: block; }
-            .hero { padding-top: 140px; }
+            .hero-art .profile-avatar { height: 150px; width: 190px; }
+            .hero-quote { font-size: 1.05rem; max-width: 155px; }
             .hero-title { font-size: clamp(4rem, 19vw, 7rem); }
             .profile-avatar { height: 150px; margin: 72px 30px 35px auto; width: 150px; }
             #projects .section-header { display: block; }
@@ -778,17 +779,8 @@
             position: relative;
         }
 
-        .hero-art::before {
-            border: 1px solid rgba(255, 255, 255, .1);
-            border-radius: 18px;
-            content: '';
-            height: 330px;
-            position: absolute;
-            transform: rotate(9deg);
-            width: 330px;
-        }
-
-        .hero-art::after { border: 1px solid rgba(244, 63, 143, .36); content: ''; height: 250px; position: absolute; transform: rotate(-7deg); width: 250px; }
+        .hero-art::before { background: linear-gradient(90deg, transparent, var(--color-secondary), var(--color-accent), transparent); box-shadow: 0 58px 0 rgba(91, 92, 240, .2), 0 -58px 0 rgba(255, 200, 87, .16); content: ''; height: 1px; position: absolute; transform: rotate(-22deg); width: 430px; }
+        .hero-art::after { background: repeating-linear-gradient(90deg, transparent 0 27px, rgba(255, 255, 255, .08) 28px 29px); content: ''; height: 260px; opacity: .55; position: absolute; transform: rotate(-16deg); width: 340px; }
 
         .hero-art .profile-avatar {
             margin: 0;
@@ -805,8 +797,8 @@
         @media (max-width: 800px) {
             .hero .container { grid-template-columns: 1fr; }
             .hero-art { min-height: 270px; order: -1; }
-            .hero-art::before { height: 240px; width: 240px; }
-            .hero-art::after { height: 190px; width: 190px; }
+            .hero-art::before { width: 300px; }
+            .hero-art::after { height: 200px; width: 260px; }
             .hero-art .profile-avatar { height: 150px; width: 150px; }
             .hero-content::after { margin-top: 38px; }
         }
@@ -816,9 +808,9 @@
             .hero-title { font-size: clamp(3.8rem, 19vw, 6.5rem); letter-spacing: -.09em; max-width: 100%; overflow-wrap: anywhere; }
             .hero-subtitle { font-size: 1rem; }
             .hero-art { min-height: 225px; }
-            .hero-art::before { height: 205px; width: 205px; }
-            .hero-art::after { height: 164px; width: 164px; }
-            .hero-art .profile-avatar { height: 132px; width: 132px; }
+            .hero-art::before { width: 260px; }
+            .hero-art::after { height: 170px; width: 220px; }
+            .hero-art .profile-avatar { height: 150px; width: 190px; }
             .hero-art-label { font-size: .54rem; margin-top: 22px; }
         }
 
