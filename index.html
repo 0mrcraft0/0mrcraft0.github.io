@@ -637,7 +637,8 @@
         .hero-title span { color: var(--color-primary); }
         .hero-subtitle { color: var(--color-text-muted); font-size: clamp(1rem, 2vw, 1.35rem); max-width: 520px; }
         .profile-avatar { align-self: end; border: 1px solid var(--color-primary); box-shadow: 0 0 0 18px rgba(255, 179, 107, .04), 0 0 80px rgba(255, 179, 107, .2); display: grid; height: 210px; margin: 0 0 32px auto; place-items: center; position: relative; width: 210px; }
-        .profile-avatar::after { border: 1px solid var(--color-accent); border-radius: 50%; content: ''; inset: -34px 25px 25px -34px; position: absolute; }
+        .profile-avatar { background: linear-gradient(145deg, rgba(255, 179, 107, .2), rgba(101, 232, 255, .1)); border-radius: 22px; }
+        .profile-avatar::after { border: 1px solid var(--color-accent); border-radius: 14px; content: ''; inset: -26px 24px 24px -26px; position: absolute; transform: rotate(-12deg); }
         .avatar-mark { color: var(--color-text); font: 700 clamp(2.7rem, 5vw, 4.6rem) 'Trebuchet MS', sans-serif; letter-spacing: -.18em; line-height: 1; margin-left: -.14em; position: relative; text-shadow: 5px 5px 0 var(--color-secondary); z-index: 1; }
         .avatar-mark::before { border: 1px solid var(--color-accent); content: ''; height: 76%; left: 50%; position: absolute; top: 12%; transform: translateX(-50%) rotate(45deg); width: 76%; z-index: -1; }
         .hero-content::after { color: rgba(248, 248, 242, .42); content: 'AVAILABLE FOR SELECTED PROJECTS / 2026'; display: block; font: .62rem monospace; letter-spacing: .14em; margin-top: 58px; }
@@ -776,13 +777,15 @@
 
         .hero-art::before {
             border: 1px solid rgba(255, 255, 255, .1);
-            border-radius: 50%;
+            border-radius: 18px;
             content: '';
             height: 330px;
             position: absolute;
-            transform: rotate(-18deg);
+            transform: rotate(9deg);
             width: 330px;
         }
+
+        .hero-art::after { border: 1px solid rgba(255, 179, 107, .28); content: ''; height: 250px; position: absolute; transform: rotate(-7deg); width: 250px; }
 
         .hero-art .profile-avatar {
             margin: 0;
@@ -800,6 +803,7 @@
             .hero .container { grid-template-columns: 1fr; }
             .hero-art { min-height: 270px; order: -1; }
             .hero-art::before { height: 240px; width: 240px; }
+            .hero-art::after { height: 190px; width: 190px; }
             .hero-art .profile-avatar { height: 150px; width: 150px; }
             .hero-content::after { margin-top: 38px; }
         }
@@ -810,6 +814,7 @@
             .hero-subtitle { font-size: 1rem; }
             .hero-art { min-height: 225px; }
             .hero-art::before { height: 205px; width: 205px; }
+            .hero-art::after { height: 164px; width: 164px; }
             .hero-art .profile-avatar { height: 132px; width: 132px; }
             .hero-art-label { font-size: .54rem; margin-top: 22px; }
         }
