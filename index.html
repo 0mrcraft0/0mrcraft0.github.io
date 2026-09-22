@@ -3,42 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Neon Ghost | Digital Profile</title>
-    <meta name="description" content="Neon Ghost - Digital Architect. Full-stack developer, UI/UX designer. Frontend, Backend, AI/ML, Cybersecurity. Portfolio and contacts.">
-    <meta name="keywords" content="web developer, full-stack, frontend, backend, UI/UX designer, digital architect, portfolio">
+    <title>Neon Ghost | Digital Architect & Developer</title>
+    <meta name="description" content="Premium digital architect portfolio. Full-stack developer, UI/UX designer, AI/ML specialist.">
+    <meta name="keywords" content="web developer, full-stack, frontend, backend, UI/UX design, digital architect, portfolio">
     <meta name="author" content="Neon Ghost">
     <meta name="robots" content="index, follow">
-    <meta name="language" content="en">
-    <meta name="revisit-after" content="7 days">
     
-    <!-- Open Graph Tags -->
-    <meta property="og:title" content="Neon Ghost - Digital Architect">
-    <meta property="og:description" content="Professional digital architect and full-stack developer. Check out my portfolio.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://0mrcraft0.github.io">
-    
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Neon Ghost - Digital Architect">
-    <meta name="twitter:description" content="Portfolio of digital architect and full-stack developer">
-    <meta name="twitter:site" content="@titanik11990">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://0mrcraft0.github.io">
-    
-    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💀</text></svg>">
     
     <style>
-        .visually-hidden {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            border: 0;
+        :root {
+            --color-primary: #a78bfa;
+            --color-secondary: #ec4899;
+            --color-accent: #06b6d4;
+            --color-dark: #0f172a;
+            --color-darker: #020617;
+            --color-text: #f1f5f9;
+            --color-text-muted: #cbd5e1;
         }
 
         * {
@@ -47,16 +28,16 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Segoe UI', 'Inter', system-ui, -apple-system, sans-serif;
-            background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #2d1b4e 100%);
-            color: #e8eef5;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+            background: linear-gradient(135deg, var(--color-darker) 0%, #1a0a3a 50%, var(--color-dark) 100%);
+            color: var(--color-text);
             overflow-x: hidden;
-            line-height: 1.6;
-            user-select: none;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
+            line-height: 1.7;
             min-height: 100vh;
         }
 
@@ -68,262 +49,46 @@
             width: 100%;
             height: 100%;
             background: 
-                radial-gradient(circle at 20% 50%, rgba(251, 146, 60, 0.12) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(6, 182, 212, 0.12) 0%, transparent 50%);
+                radial-gradient(circle at 30% 50%, rgba(167, 139, 250, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 70% 70%, rgba(236, 72, 153, 0.06) 0%, transparent 50%),
+                radial-gradient(circle at 50% 0%, rgba(6, 182, 212, 0.04) 0%, transparent 50%);
+            pointer-events: none;
             z-index: -1;
-            animation: ambientFloat 15s ease-in-out infinite;
         }
 
-        @keyframes ambientFloat {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.8; }
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 60px 20px;
+            padding: 0 20px;
         }
 
-        header {
-            text-align: center;
-            margin-bottom: 100px;
-            padding: 80px 40px;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            animation: slideDown 0.8s ease-out;
-        }
-
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .main-title {
-            font-size: 4.5rem;
-            font-weight: 900;
-            background: linear-gradient(135deg, #fb923c 0%, #06b6d4 50%, #8b5cf6 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            letter-spacing: -2px;
-            margin-bottom: 15px;
-            animation: titleShine 3s ease-in-out infinite;
-        }
-
-        @keyframes titleShine {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.8; }
-        }
-
-        .subtitle {
-            font-size: 1.25rem;
-            color: #06b6d4;
-            letter-spacing: 4px;
-            margin-top: 15px;
-            font-weight: 500;
-            text-transform: uppercase;
-        }
-
-        .profile-img {
-            width: 140px;
-            height: 140px;
-            margin: 50px auto 30px;
-            border-radius: 50%;
-            border: 3px solid #06b6d4;
-            background: linear-gradient(135deg, rgba(251, 146, 60, 0.2) 0%, rgba(6, 182, 212, 0.2) 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3.5rem;
-            transition: all 0.4s ease;
-            box-shadow: 0 0 30px rgba(6, 182, 212, 0.3);
-            animation: float 3s ease-in-out infinite;
-        }
-
-        .profile-img:hover {
-            transform: scale(1.15) rotateZ(-10deg);
-            box-shadow: 0 0 60px rgba(251, 146, 60, 0.6);
-            border-color: #fb923c;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
-        }
-
-        section {
-            background: rgba(255, 255, 255, 0.06);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            border-radius: 16px;
-            padding: 60px;
-            margin-bottom: 50px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-            animation: fadeInUp 0.8s ease-out backwards;
-        }
-
-        section:nth-child(1) { animation-delay: 0.1s; }
-        section:nth-child(2) { animation-delay: 0.2s; }
-        section:nth-child(3) { animation-delay: 0.3s; }
-        section:nth-child(4) { animation-delay: 0.4s; }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        section:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(251, 146, 60, 0.2);
-            border-color: rgba(251, 146, 60, 0.3);
-            background: rgba(255, 255, 255, 0.08);
-        }
-
-        .section-title {
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: #06b6d4;
-            margin-bottom: 40px;
-            letter-spacing: -0.5px;
-            position: relative;
-            padding-bottom: 15px;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 60px;
-            height: 4px;
-            background: linear-gradient(90deg, #fb923c, #06b6d4);
-            border-radius: 2px;
-        }
-
-        .about-text {
-            font-size: 1.1rem;
-            line-height: 2;
-            color: #cbd5e1;
-            font-weight: 400;
-        }
-
-        .terminal-text {
-            font-family: 'Monaco', 'Courier New', monospace;
-            color: #4ade80;
-            font-size: 0.95rem;
-            margin-top: 25px;
-            padding: 18px;
-            background: rgba(30, 41, 59, 0.6);
-            border-left: 4px solid #06b6d4;
-            border-radius: 8px;
-            font-weight: 500;
-        }
-
-        .skill-item {
-            margin-bottom: 30px;
-            animation: slideInRight 0.6s ease-out backwards;
-        }
-
-        .skill-item:nth-child(1) { animation-delay: 0.1s; }
-        .skill-item:nth-child(2) { animation-delay: 0.2s; }
-        .skill-item:nth-child(3) { animation-delay: 0.3s; }
-        .skill-item:nth-child(4) { animation-delay: 0.4s; }
-        .skill-item:nth-child(5) { animation-delay: 0.5s; }
-        .skill-item:nth-child(6) { animation-delay: 0.6s; }
-
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        .skill-name {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 12px;
-            color: #e8eef5;
-            font-size: 1rem;
-            font-weight: 600;
-        }
-
-        .skill-bar {
-            height: 8px;
-            background: rgba(100, 116, 139, 0.3);
-            border-radius: 10px;
-            overflow: hidden;
-            position: relative;
-            border: 1px solid rgba(251, 146, 60, 0.2);
-        }
-
-        .skill-progress {
-            height: 100%;
-            background: linear-gradient(90deg, #fb923c 0%, #06b6d4 100%);
-            border-radius: 10px;
-            width: 0;
-            transition: width 2.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            box-shadow: 0 0 20px rgba(251, 146, 60, 0.6);
-        }
-
-        .social-links {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 25px;
-            margin-top: 40px;
-        }
-
-        .social-link {
+        /* HERO SECTION */
+        .hero {
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
-            align-items: center;
             justify-content: center;
-            padding: 35px 25px;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1.5px solid rgba(251, 146, 60, 0.3);
-            border-radius: 12px;
-            text-decoration: none;
-            color: #e8eef5;
-            font-size: 1rem;
-            font-weight: 600;
-            transition: all 0.4s ease;
-            gap: 12px;
-            animation: popIn 0.5s ease-out backwards;
+            align-items: center;
+            text-align: center;
+            padding: 100px 20px;
+            animation: fadeInScale 1s ease-out;
         }
 
-        .social-link:nth-child(1) { animation-delay: 0.1s; }
-        .social-link:nth-child(2) { animation-delay: 0.2s; }
-        .social-link:nth-child(3) { animation-delay: 0.3s; }
-        .social-link:nth-child(4) { animation-delay: 0.4s; }
-        .social-link:nth-child(5) { animation-delay: 0.5s; }
-
-        @keyframes popIn {
+        @keyframes fadeInScale {
             from {
                 opacity: 0;
-                transform: scale(0.8);
+                transform: scale(0.95);
             }
             to {
                 opacity: 1;
@@ -331,209 +96,594 @@
             }
         }
 
-        .social-link:hover {
-            transform: translateY(-8px);
-            background: rgba(251, 146, 60, 0.1);
-            border-color: #fb923c;
-            box-shadow: 0 15px 40px rgba(251, 146, 60, 0.3);
-            color: #fb923c;
+        .hero-content {
+            max-width: 900px;
         }
 
-        .social-icon {
-            font-size: 2rem;
-        }
-
-        .terminal-window {
-            background: rgba(30, 41, 59, 0.4);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(6, 182, 212, 0.2);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-            margin-top: 30px;
-        }
-
-        .terminal-header {
-            background: linear-gradient(90deg, rgba(6, 182, 212, 0.1), rgba(251, 146, 60, 0.1));
-            padding: 15px 20px;
-            border-bottom: 1px solid rgba(6, 182, 212, 0.2);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .terminal-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            opacity: 0.7;
-        }
-
-        .terminal-title {
-            margin-left: auto;
-            color: #94a3b8;
-            font-family: 'Monaco', monospace;
+        .hero-badge {
+            display: inline-block;
+            padding: 10px 20px;
+            background: rgba(167, 139, 250, 0.1);
+            border: 1px solid rgba(167, 139, 250, 0.3);
+            border-radius: 50px;
+            color: var(--color-primary);
             font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+            animation: slideUp 0.8s ease-out;
         }
 
-        .terminal-body {
-            padding: 20px;
-            min-height: 250px;
-            max-height: 450px;
-            overflow-y: auto;
-            font-family: 'Monaco', monospace;
-            color: #4ade80;
-            font-size: 0.95rem;
-            line-height: 1.7;
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        .terminal-body::-webkit-scrollbar {
-            width: 8px;
+        .hero-title {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 50%, var(--color-accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: slideUp 0.8s ease-out 0.1s backwards;
         }
 
-        .terminal-body::-webkit-scrollbar-track {
-            background: transparent;
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--color-text-muted);
+            margin-bottom: 50px;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+            animation: slideUp 0.8s ease-out 0.2s backwards;
         }
 
-        .terminal-body::-webkit-scrollbar-thumb {
-            background: rgba(251, 146, 60, 0.4);
-            border-radius: 4px;
-        }
-
-        .terminal-line {
-            margin: 6px 0;
-        }
-
-        .terminal-command {
-            color: #06b6d4;
-        }
-
-        .terminal-error {
-            color: #f87171;
-        }
-
-        .terminal-success {
-            color: #4ade80;
-        }
-
-        .terminal-input-line {
-            padding: 15px 20px;
-            background: rgba(15, 23, 42, 0.6);
-            border-top: 1px solid rgba(251, 146, 60, 0.1);
+        .profile-avatar {
+            width: 180px;
+            height: 180px;
+            margin: 50px auto;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(167, 139, 250, 0.2) 0%, rgba(236, 72, 153, 0.2) 100%);
+            border: 2px solid rgba(167, 139, 250, 0.4);
             display: flex;
             align-items: center;
-            gap: 10px;
+            justify-content: center;
+            font-size: 4rem;
+            animation: float 3s ease-in-out infinite;
+            box-shadow: 0 20px 60px rgba(167, 139, 250, 0.15);
         }
 
-        .terminal-prompt {
-            color: #06b6d4;
-            font-family: 'Monaco', monospace;
-            font-weight: bold;
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
         }
 
-        .terminal-input {
-            flex: 1;
-            background: transparent;
+        .cta-button {
+            display: inline-block;
+            padding: 16px 40px;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
             border: none;
-            color: #4ade80;
-            font-family: 'Monaco', monospace;
-            font-size: 0.95rem;
-            outline: none;
-            caret-color: #06b6d4;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(167, 139, 250, 0.3);
+            animation: slideUp 0.8s ease-out 0.3s backwards;
         }
 
-        .terminal-input::placeholder {
-            color: rgba(74, 222, 128, 0.3);
+        .cta-button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 50px rgba(167, 139, 250, 0.5);
         }
 
-        footer {
+        /* SECTIONS */
+        section {
+            padding: 120px 0;
+            position: relative;
+        }
+
+        section:nth-child(even) {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .section-header {
             text-align: center;
-            margin-top: 100px;
-            padding: 50px 0;
-            color: #94a3b8;
-            font-size: 0.95rem;
-            border-top: 1px solid rgba(251, 146, 60, 0.2);
-            font-weight: 500;
-            animation: fadeIn 1s ease-out;
+            margin-bottom: 80px;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        .section-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            margin-bottom: 20px;
+            color: var(--color-text);
         }
 
-        .skills-grid {
+        .section-title span {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-description {
+            font-size: 1.1rem;
+            color: var(--color-text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ABOUT */
+        .about-content {
             display: grid;
-            gap: 25px;
-            margin-top: 40px;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            animation: fadeInUp 0.8s ease-out;
         }
 
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                animation: none !important;
-                transition: none !important;
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
 
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 2;
+            color: var(--color-text-muted);
+        }
+
+        .about-text p {
+            margin-bottom: 25px;
+        }
+
+        .about-highlight {
+            padding: 30px;
+            background: linear-gradient(135deg, rgba(167, 139, 250, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
+            border-left: 4px solid var(--color-primary);
+            border-radius: 8px;
+            margin-top: 30px;
+            font-style: italic;
+            color: var(--color-text);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 40px 30px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(167, 139, 250, 0.2);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            animation: scaleIn 0.6s ease-out backwards;
+        }
+
+        .stat-item:nth-child(1) { animation-delay: 0.1s; }
+        .stat-item:nth-child(2) { animation-delay: 0.2s; }
+        .stat-item:nth-child(3) { animation-delay: 0.3s; }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .stat-item:hover {
+            background: rgba(167, 139, 250, 0.08);
+            border-color: var(--color-primary);
+            transform: translateY(-8px);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            color: var(--color-text-muted);
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* SKILLS */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .skill-card {
+            background: linear-gradient(135deg, rgba(167, 139, 250, 0.08) 0%, rgba(236, 72, 153, 0.05) 100%);
+            border: 1px solid rgba(167, 139, 250, 0.2);
+            border-radius: 16px;
+            padding: 40px 30px;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            animation: fadeInUp 0.6s ease-out backwards;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-card:nth-child(1) { animation-delay: 0.1s; }
+        .skill-card:nth-child(2) { animation-delay: 0.2s; }
+        .skill-card:nth-child(3) { animation-delay: 0.3s; }
+        .skill-card:nth-child(4) { animation-delay: 0.4s; }
+        .skill-card:nth-child(5) { animation-delay: 0.5s; }
+        .skill-card:nth-child(6) { animation-delay: 0.6s; }
+
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .skill-card:hover::before {
+            left: 100%;
+        }
+
+        .skill-card:hover {
+            background: linear-gradient(135deg, rgba(167, 139, 250, 0.15) 0%, rgba(236, 72, 153, 0.1) 100%);
+            border-color: var(--color-primary);
+            transform: translateY(-12px);
+            box-shadow: 0 25px 50px rgba(167, 139, 250, 0.2);
+        }
+
+        .skill-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .skill-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--color-text);
+        }
+
+        .skill-level {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+        }
+
+        .skill-bar {
+            height: 6px;
+            background: rgba(100, 116, 139, 0.3);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+            border-radius: 10px;
+            width: 0;
+            transition: width 2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        /* CONTACTS */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .contact-card {
+            background: linear-gradient(135deg, rgba(6, 182, 212, 0.08) 0%, rgba(167, 139, 250, 0.05) 100%);
+            border: 1px solid rgba(167, 139, 250, 0.2);
+            border-radius: 16px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.4s ease;
+            text-decoration: none;
+            color: inherit;
+            animation: fadeInUp 0.6s ease-out backwards;
+        }
+
+        .contact-card:nth-child(1) { animation-delay: 0.1s; }
+        .contact-card:nth-child(2) { animation-delay: 0.2s; }
+        .contact-card:nth-child(3) { animation-delay: 0.3s; }
+        .contact-card:nth-child(4) { animation-delay: 0.4s; }
+        .contact-card:nth-child(5) { animation-delay: 0.5s; }
+
+        .contact-card:hover {
+            background: linear-gradient(135deg, rgba(6, 182, 212, 0.15) 0%, rgba(167, 139, 250, 0.1) 100%);
+            border-color: var(--color-accent);
+            transform: translateY(-12px);
+            box-shadow: 0 25px 50px rgba(6, 182, 212, 0.2);
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .contact-link {
+            color: var(--color-text-muted);
+            text-decoration: none;
+            word-break: break-all;
+            transition: color 0.3s ease;
+        }
+
+        .contact-card:hover .contact-link {
+            color: var(--color-accent);
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 60px 0;
+            text-align: center;
+            color: var(--color-text-muted);
+            border-top: 1px solid rgba(167, 139, 250, 0.1);
+            font-size: 0.95rem;
+        }
+
+        /* RESPONSIVE */
         @media (max-width: 768px) {
-            .main-title {
-                font-size: 2.8rem;
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
             }
 
-            .section-title {
-                font-size: 1.8rem;
-            }
-
-            section {
-                padding: 40px 25px;
-            }
-
-            header {
-                padding: 50px 25px;
-            }
-
-            .social-links {
+            .stats-grid {
                 grid-template-columns: 1fr;
             }
 
-            .container {
-                padding: 40px 15px;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .main-title {
-                font-size: 2rem;
-                letter-spacing: -1px;
-            }
-
-            .subtitle {
-                font-size: 1rem;
-                letter-spacing: 2px;
-            }
-
-            .profile-img {
-                width: 120px;
-                height: 120px;
-                font-size: 3rem;
-            }
-
-            section {
-                padding: 30px 20px;
-                margin-bottom: 35px;
+            .hero-title {
+                font-size: 2.5rem;
             }
 
             .section-title {
-                font-size: 1.5rem;
+                font-size: 2rem;
             }
 
-            .about-text {
+            section {
+                padding: 80px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 60px 20px;
+            }
+
+            .hero-title {
+                font-size: 1.8rem;
+            }
+
+            .hero-subtitle {
                 font-size: 1rem;
-                line-height: 1.8;
+            }
+
+            .profile-avatar {
+                width: 120px;
+                height: 120px;
+                font-size: 2.5rem;
             }
         }
     </style>
-    
+</head>
+<body>
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-badge">💀 DIGITAL ARCHITECT</span>
+                <div class="profile-avatar">💀</div>
+                <h1 class="hero-title">NEON<br><span>GHOST</span></h1>
+                <p class="hero-subtitle">Full-stack developer & UI/UX designer crafting digital experiences</p>
+                <a href="#contact" class="cta-button">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About <span>Me</span></h2>
+            </div>
+            <div class="about-content">
+                <div>
+                    <p class="about-text">
+                        I am a digital architect passionate about building beautiful, functional, and innovative web experiences. With expertise spanning frontend and backend development, I transform complex ideas into elegant solutions.
+                    </p>
+                    <p class="about-text">
+                        My approach combines technical excellence with creative thinking, ensuring every project not only works flawlessly but also delights users. Always exploring new technologies and pushing the boundaries of what's possible on the web.
+                    </p>
+                    <div class="about-highlight">
+                        "Code is poetry written for machines and people to read. Every line should be intentional."
+                    </div>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">5+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Projects Done</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Client Satisfied</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Technical <span>Skills</span></h2>
+                <p class="section-description">Expertise across modern web technologies and design disciplines</p>
+            </div>
+            <div class="skills-container">
+                <div class="skill-card">
+                    <span class="skill-icon">⚡</span>
+                    <div class="skill-name">Frontend Development</div>
+                    <div class="skill-level">
+                        <span>Proficiency</span>
+                        <span>95%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 95%; transition-delay: 0.1s;"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <span class="skill-icon">🔧</span>
+                    <div class="skill-name">Backend Development</div>
+                    <div class="skill-level">
+                        <span>Proficiency</span>
+                        <span>88%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 88%; transition-delay: 0.2s;"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <span class="skill-icon">🎨</span>
+                    <div class="skill-name">UI/UX Design</div>
+                    <div class="skill-level">
+                        <span>Proficiency</span>
+                        <span>92%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 92%; transition-delay: 0.3s;"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <span class="skill-icon">🤖</span>
+                    <div class="skill-name">AI/ML</div>
+                    <div class="skill-level">
+                        <span>Proficiency</span>
+                        <span>85%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 85%; transition-delay: 0.4s;"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <span class="skill-icon">🔐</span>
+                    <div class="skill-name">Cybersecurity</div>
+                    <div class="skill-level">
+                        <span>Proficiency</span>
+                        <span>80%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 80%; transition-delay: 0.5s;"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <span class="skill-icon">☁️</span>
+                    <div class="skill-name">Cloud & DevOps</div>
+                    <div class="skill-level">
+                        <span>Proficiency</span>
+                        <span>87%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 87%; transition-delay: 0.6s;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Let's <span>Connect</span></h2>
+                <p class="section-description">Reach out through any of these channels</p>
+            </div>
+            <div class="contact-grid">
+                <a href="https://github.com/0mrcraft0" class="contact-card" target="_blank" rel="noopener noreferrer">
+                    <div class="contact-icon">💻</div>
+                    <div class="contact-title">GitHub</div>
+                    <div class="contact-link">@0mrcraft0</div>
+                </a>
+                <a href="https://t.me/choto_schemto0" class="contact-card" target="_blank" rel="noopener noreferrer">
+                    <div class="contact-icon">📱</div>
+                    <div class="contact-title">Telegram</div>
+                    <div class="contact-link">@choto_schemto0</div>
+                </a>
+                <a href="https://x.com/titanik11990" class="contact-card" target="_blank" rel="noopener noreferrer">
+                    <div class="contact-icon">𝕏</div>
+                    <div class="contact-title">Twitter</div>
+                    <div class="contact-link">@titanik11990</div>
+                </a>
+                <a href="https://www.instagram.com/makim_55908/" class="contact-card" target="_blank" rel="noopener noreferrer">
+                    <div class="contact-icon">📷</div>
+                    <div class="contact-title">Instagram</div>
+                    <div class="contact-link">@makim_55908</div>
+                </a>
+                <a href="mailto:titanik11990@gmail.com" class="contact-card">
+                    <div class="contact-icon">📧</div>
+                    <div class="contact-title">Email</div>
+                    <div class="contact-link">titanik11990@gmail.com</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>© 2026 NEON GHOST. All rights reserved.</p>
+        </div>
+    </footer>
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -548,211 +698,40 @@
         "https://instagram.com/makim_55908",
         "https://x.com/titanik11990",
         "https://t.me/choto_schemto0"
-      ],
-      "knowsAbout": ["Web Development", "Frontend", "Backend", "UI/UX Design", "AI/ML", "Cybersecurity", "Cloud Computing"]
+      ]
     }
     </script>
-</head>
-<body>
-    <div class="container">
-        <header>
-            <h1 class="main-title">NEON GHOST</h1>
-            <p class="subtitle">Digital Architect</p>
-            <div class="profile-img">💀</div>
-        </header>
-
-        <main id="main-content" role="main">
-        <section class="about-section">
-            <h2 class="section-title">About Me</h2>
-            <p class="about-text">
-                Welcome to my digital reality. I am an architect of cyberspace, building bridges between code and creativity. In a world where data flows like information streams, I find beauty in algorithms and elegance in syntax.
-                <br><br>
-                My interests: developing interactive web applications, exploring new technologies, creating visual effects and modern design. Always seeking new challenges and innovative solutions.
-            </p>
-            <div class="terminal-text">→ STATUS: ONLINE | READY FOR COLLABORATION</div>
-        </section>
-
-        <section class="skills-section">
-            <h2 class="section-title">Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>⚡ Frontend Development</span>
-                        <span class="skill-percent">95%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="95"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>🔧 Backend Development</span>
-                        <span class="skill-percent">88%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="88"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>🎨 UI/UX Design</span>
-                        <span class="skill-percent">92%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="92"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>🤖 AI/ML</span>
-                        <span class="skill-percent">85%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="85"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>🔐 Cybersecurity</span>
-                        <span class="skill-percent">80%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="80"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>☁️ Cloud & DevOps</span>
-                        <span class="skill-percent">87%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="87"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="social-section">
-            <h2 class="section-title">Get in Touch</h2>
-            <div class="social-links">
-                <a href="https://github.com/0mrcraft0" class="social-link" target="_blank" rel="noopener noreferrer">
-                    <span class="social-icon">💻</span>
-                    <span>GitHub</span>
-                </a>
-                <a href="https://t.me/choto_schemto0" class="social-link" target="_blank" rel="noopener noreferrer">
-                    <span class="social-icon">📱</span>
-                    <span>Telegram</span>
-                </a>
-                <a href="https://x.com/titanik11990" class="social-link" target="_blank" rel="noopener noreferrer">
-                    <span class="social-icon">𝕏</span>
-                    <span>Twitter / X</span>
-                </a>
-                <a href="https://www.instagram.com/makim_55908/" class="social-link" target="_blank" rel="noopener noreferrer">
-                    <span class="social-icon">📷</span>
-                    <span>Instagram</span>
-                </a>
-                <a href="mailto:titanik11990@gmail.com" class="social-link">
-                    <span class="social-icon">📧</span>
-                    <span>Email</span>
-                </a>
-            </div>
-        </section>
-
-        <section class="terminal-section">
-            <h2 class="section-title">Terminal</h2>
-            <div class="terminal-window">
-                <div class="terminal-header">
-                    <span class="terminal-dot" style="background: #ff5f56;"></span>
-                    <span class="terminal-dot" style="background: #ffbd2e;"></span>
-                    <span class="terminal-dot" style="background: #27c93f;"></span>
-                    <span class="terminal-title">neon-ghost@terminal</span>
-                </div>
-                <div class="terminal-body" id="terminal-output">
-                    <div class="terminal-line">~ Welcome to Neon Ghost Terminal ~</div>
-                    <div class="terminal-line">Type 'help' for available commands</div>
-                    <div class="terminal-line">─────────────────────────────────────</div>
-                </div>
-                <div class="terminal-input-line">
-                    <span class="terminal-prompt">$</span>
-                    <label for="terminal-input" class="visually-hidden">Terminal command input</label>
-                    <input type="text" id="terminal-input" class="terminal-input" autofocus>
-                </div>
-            </div>
-        </section>
-
-        </main>
-
-        <footer>
-            <p>© 2026 NEON GHOST | ALL RIGHTS RESERVED</p>
-        </footer>
-    </div>
 
     <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Animate skill bars on scroll
         const observerOptions = { threshold: 0.5 };
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const progressBars = entry.target.querySelectorAll('.skill-progress');
                     progressBars.forEach(bar => {
-                        const progress = bar.getAttribute('data-progress');
-                        setTimeout(() => { bar.style.width = progress + '%'; }, 300);
+                        const width = bar.style.width;
+                        bar.style.width = '0';
+                        setTimeout(() => { bar.style.width = width; }, 100);
                     });
                     observer.unobserve(entry.target);
                 }
             });
         }, observerOptions);
 
-        const skillsSection = document.querySelector('.skills-section');
+        const skillsSection = document.querySelector('#skills');
         if (skillsSection) observer.observe(skillsSection);
-
-        const terminalInput = document.getElementById('terminal-input');
-        const terminalOutput = document.getElementById('terminal-output');
-        const commands = {
-            help: 'Available commands:\n- help: show this help\n- about: information about me\n- skills: list of skills\n- contact: contact information\n- date: current date and time\n- clear: clear terminal',
-            about: 'NEON GHOST - Digital Architect\nSpecialization: Full-stack development, UI/UX design\nLocation: Cyberspace\nStatus: Available for projects',
-            skills: 'Frontend: 95% | Backend: 88% | UI/UX: 92%\nAI/ML: 85% | Security: 80% | DevOps: 87%',
-            contact: 'Email: titanik11990@gmail.com\nGitHub: github.com/0mrcraft0\nTelegram: @choto_schemto0',
-            date: () => new Date().toLocaleString('en-US'),
-            clear: 'clear'
-        };
-
-        function addTerminalLine(text, className = '') {
-            const line = document.createElement('div');
-            line.className = `terminal-line ${className}`;
-            line.textContent = text;
-            terminalOutput.appendChild(line);
-            terminalOutput.scrollTop = terminalOutput.scrollHeight;
-        }
-
-        terminalInput.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter') {
-                const command = terminalInput.value.trim().toLowerCase();
-                if (command) {
-                    addTerminalLine(`$ ${command}`, 'terminal-command');
-                    if (command === 'clear') {
-                        terminalOutput.innerHTML = '';
-                    } else if (commands[command]) {
-                        const response = typeof commands[command] === 'function' ? commands[command]() : commands[command];
-                        response.split('\n').forEach(line => addTerminalLine(line, 'terminal-success'));
-                    } else {
-                        addTerminalLine(`command not found: ${command}`, 'terminal-error');
-                    }
-                }
-                terminalInput.value = '';
-            }
-        });
-
-        document.querySelector('.terminal-window').addEventListener('click', () => { terminalInput.focus(); });
-
-        document.addEventListener('contextmenu', (e) => { e.preventDefault(); return false; });
-        document.addEventListener('selectstart', (e) => { if (e.target.id !== 'terminal-input') { e.preventDefault(); return false; } });
-        document.addEventListener('copy', (e) => { if (e.target.id !== 'terminal-input') { e.preventDefault(); return false; } });
-        document.addEventListener('keydown', (e) => { if (e.keyCode === 123 || ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.keyCode === 73 || e.keyCode === 67 || e.keyCode === 74)) || ((e.ctrlKey || e.metaKey) && e.keyCode === 85) || ((e.ctrlKey || e.metaKey) && e.keyCode === 83)) { e.preventDefault(); return false; } });
-
-        console.log('%cWARNING!', 'color: #fb923c; font-size: 40px; font-weight: bold;');
-        console.log('%cUsing the console can be dangerous!', 'color: #06b6d4; font-size: 20px;');
-        console.log('%cDo not paste code you do not understand here.', 'color: #94a3b8; font-size: 14px;');
-        console.log('%c© 2026 NEON GHOST - All Rights Reserved', 'color: #64748b; font-size: 12px;');
     </script>
 </body>
 </html>
