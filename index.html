@@ -9,7 +9,7 @@
     <meta name="author" content="Neon Ghost">
     <meta name="robots" content="index, follow">
     
-    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💀</text></svg>">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23070910'/%3E%3Ctext x='50' y='63' text-anchor='middle' font-size='38' font-family='Arial' font-weight='700' fill='%23ffb36b'%3ENG%3C/text%3E%3C/svg%3E">
     
     <style>
         :root {
@@ -636,8 +636,10 @@
         .hero-title { font-size: clamp(4rem, 10vw, 9.2rem); letter-spacing: -.1em; line-height: .83; margin: 26px 0; }
         .hero-title span { color: var(--color-primary); }
         .hero-subtitle { color: var(--color-text-muted); font-size: clamp(1rem, 2vw, 1.35rem); max-width: 520px; }
-        .profile-avatar { align-self: end; border: 1px solid var(--color-primary); box-shadow: 0 0 0 18px rgba(255, 179, 107, .04), 0 0 80px rgba(255, 179, 107, .2); font-size: 3.5rem; height: 210px; margin: 0 0 32px auto; position: relative; width: 210px; }
+        .profile-avatar { align-self: end; border: 1px solid var(--color-primary); box-shadow: 0 0 0 18px rgba(255, 179, 107, .04), 0 0 80px rgba(255, 179, 107, .2); display: grid; height: 210px; margin: 0 0 32px auto; place-items: center; position: relative; width: 210px; }
         .profile-avatar::after { border: 1px solid var(--color-accent); border-radius: 50%; content: ''; inset: -34px 25px 25px -34px; position: absolute; }
+        .avatar-mark { color: var(--color-text); font: 700 clamp(2.7rem, 5vw, 4.6rem) 'Trebuchet MS', sans-serif; letter-spacing: -.18em; line-height: 1; margin-left: -.14em; position: relative; text-shadow: 5px 5px 0 var(--color-secondary); z-index: 1; }
+        .avatar-mark::before { border: 1px solid var(--color-accent); content: ''; height: 76%; left: 50%; position: absolute; top: 12%; transform: translateX(-50%) rotate(45deg); width: 76%; z-index: -1; }
         .hero-content::after { color: rgba(248, 248, 242, .42); content: 'AVAILABLE FOR SELECTED PROJECTS / 2026'; display: block; font: .62rem monospace; letter-spacing: .14em; margin-top: 58px; }
         .cta-button { background: var(--color-primary); border-radius: 4px; box-shadow: 8px 8px 0 rgba(255, 107, 157, .35); color: var(--color-darker); font-size: .9rem; padding: 14px 24px; }
         .cta-button:hover { box-shadow: 3px 3px 0 rgba(255, 107, 157, .5); filter: none; transform: translate(4px, 4px); }
@@ -971,13 +973,13 @@
     <section class="hero" id="top">
         <div class="container">
             <div class="hero-content">
-                <span class="hero-badge">💀 DIGITAL ARCHITECT</span>
+                <span class="hero-badge">DIGITAL ARCHITECT</span>
                 <h1 class="hero-title">NEON<br><span>GHOST</span></h1>
                 <p class="hero-subtitle">Full-stack developer & UI/UX designer crafting digital experiences</p>
                 <a href="#projects" class="cta-button">View Projects</a>
             </div>
             <div class="hero-art" aria-hidden="true">
-                <div class="profile-avatar">💀</div>
+                <div class="profile-avatar"><span class="avatar-mark">NG</span></div>
                 <span class="hero-art-label">DIGITAL / HUMAN / WEB</span>
             </div>
         </div>
